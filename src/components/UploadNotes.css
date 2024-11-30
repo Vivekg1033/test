@@ -1,0 +1,129 @@
+/* Overall Styling */
+.upload-notes {
+    background-image: url('https://source.unsplash.com/1600x900/?books,college'); /* Random College-related Image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 30px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    min-height: 100vh;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+  
+  /* Form Styles */
+  .form-container {
+    background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 500px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input, textarea, button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  textarea {
+    min-height: 100px;
+    resize: none;
+  }
+  
+  /* File Input */
+  input[type="file"] {
+    border: 1px solid #ccc;
+  }
+  
+  /* Button Styling */
+  button {
+    background-color: #2980b9;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #3498db;
+  }
+  
+  /* Uploaded Notes List */
+  .notes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .note-card {
+    background-color: rgba(255, 255, 255, 0.9);  /* White background with slight transparency */
+    color: black;
+    width: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+  }
+  
+  .note-card h4 {
+    font-size: 1.5rem;
+    color: #2980b9;
+  }
+  
+  .note-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .note-card small {
+    display: block;
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 10px;
+  }
+  
+  .note-card a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #2980b9;
+  }
+  
+  .note-card a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Delete Button */
+  .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c0392b;
+  }
+  

@@ -1,0 +1,31 @@
+.ad-container {
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .ad-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ad-item img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .ad-item .ad-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .ad-item .ad-btn:hover {
+    background-color: #0056b3;
+  }
+  

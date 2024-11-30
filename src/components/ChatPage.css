@@ -1,0 +1,92 @@
+/* ChatPage.css */
+
+/* General styling */
+.chat-page {
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .chat-container {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .public-chat,
+  .private-chat {
+    width: 48%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .messages {
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .message {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .message strong {
+    color: #2980b9;
+  }
+  
+  .message-input input {
+    width: calc(100% - 60px);
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .message-input button {
+    margin-left: 5px;
+    padding: 10px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .emoji-picker {
+    position: absolute;
+    z-index: 100;
+  }
+  
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .contact img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .contact.active {
+    background-color: #f0f0f0;
+  }
+  
