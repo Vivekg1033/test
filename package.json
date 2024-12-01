@@ -1,6 +1,5 @@
 {
   "name": "e-college",
-  // "homepage": "https://vivekg1033.github.io/e-college",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,8 +18,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-    // "predeploy": "npm run build",
-    // "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
