@@ -1,50 +1,74 @@
 import React, { useState } from 'react';
+import './StoryUpload.css';
 
-function StoryUpload() {
-  const [story, setStory] = useState({ title: '', content: '' });
-  const [stories, setStories] = useState(JSON.parse(localStorage.getItem('stories')) || []);
+const StoryUpload = () => {
+  const [image, setImage] = useState(null);
+  const [description, setDescription] = useState('');
+  const [stories, setStories] = useState([]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setStory({ ...story, [name]: value });
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => setImage(reader.result);
+      reader.readAsDataURL(file);
+    }
   };
 
-  const handleSubmit = () => {
-    const newStories = [...stories, story];
-    setStories(newStories);
-    localStorage.setItem('stories', JSON.stringify(newStories));
-    setStory({ title: '', content: '' });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (image && description) {
+      const newStory = { image, description };
+      setStories([newStory, ...stories]);
+      setImage(null);
+      setDescription('');
+    }
   };
 
   return (
-    <div>
-      <h2>Upload Story</h2>
-      <input
-        type="text"
-        name="title"
-        value={story.title}
-        onChange={handleChange}
-        placeholder="Story Title"
-      />
-      <textarea
-        name="content"
-        value={story.content}
-        onChange={handleChange}
-        placeholder="Story Content"
-      />
-      <button onClick={handleSubmit}>Upload</button>
+    <div className="story-upload-container">
+      <h1>Upload Your Story</h1>
+      <form onSubmit={handleSubmit} className="upload-section">
+        <div className="upload-preview">
+          {image ? (
+            <img src={image} alt="Story Preview" className="preview-image" />
+          ) : (
+            <span className="upload-placeholder">Upload Image</span>
+          )}
+        </div>
+        <input
+          type="file"
+          id="file-input"
+          className="file-input"
+          accept="image/*"
+          onChange={handleImageUpload}
+        />
+        <label htmlFor="file-input" className="file-input-label">
+          Choose Image
+        </label>
+        <textarea
+          className="description-input"
+          placeholder="Describe your experience..."
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <button type="submit" className="submit-button">
+          Post Story
+        </button>
+      </form>
 
-      <h3>Uploaded Stories</h3>
-      <ul>
+      <div className="stories-display">
         {stories.map((story, index) => (
-          <li key={index}>
-            <h4>{story.title}</h4>
-            <p>{story.content}</p>
-          </li>
+          <div key={index} className="story">
+            <div className="story-circle">
+              <img src={story.image} alt="Story" className="story-image" />
+            </div>
+            <p className="story-description">{story.description}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
-}
+};
 
 export default StoryUpload;
